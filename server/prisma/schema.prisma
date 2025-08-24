@@ -1,0 +1,183 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum TransactionType {
+  TED
+  PIX
+  DEPOSIT
+}
+
+enum DocumentType {
+  CPF
+  RG
+  PASSPORT
+  OTHER
+}
+
+enum PhoneType {
+  MOBILE
+  WORK
+  HOME
+  OTHER
+}
+
+enum AddressType {
+  RESIDENTIAL
+  WORK
+  COMMERCIAL
+  OTHER
+}
+
+enum PixKeyType {
+  CPF
+  email
+  phone
+  random
+}
+
+model User {
+  id                      String    @id @default(cuid())
+  name                    String
+  email                   String    @unique
+  passwordHash            String
+  transactionPasswordHash String
+  isActive                Boolean   @default(true)
+  deleteDate              DateTime?
+  role                    Role      @default(USER)
+
+  documents         Document[]
+  phones            Phone[]
+  addresses         Address[]
+  accounts          Account[]
+  TargetUserActions AuditLog[] @relation("TargetUserActions")
+  ActorUserActions  AuditLog[] @relation("ActorUserActions")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id      String  @id @default(cuid())
+  agency  String
+  number  String
+  digit   String
+  balance Decimal @default(0) @db.Decimal(12, 2)
+  userId  String
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  transactions Transaction[]
+  pixKey       PixKey[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([agency, number])
+}
+
+model PixKey {
+  id    String     @id @default(cuid())
+  type  PixKeyType
+  value String     @unique
+
+  accountId String
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Document {
+  id        String       @id @default(cuid())
+  type      DocumentType @default(CPF)
+  otherType String?      @map("other_type")
+  value     String       @unique
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Phone {
+  id          String    @id @default(cuid())
+  type        PhoneType @default(MOBILE)
+  countryCode Int       @map("country_code")
+  areaCode    Int       @map("area_code")
+  number      String
+  otherType   String?   @map("other_type")
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([countryCode, areaCode, number])
+}
+
+model Address {
+  id           String      @id @default(cuid())
+  type         AddressType @default(RESIDENTIAL)
+  otherType    String?     @map("other_type")
+  street       String
+  number       String
+  complement   String?
+  neighborhood String
+  city         String
+  state        String
+  country      String      @default("BR")
+  zipcode      String
+  userId       String
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  id    String          @id @default(cuid())
+  value Decimal         @db.Decimal(12, 2)
+  type  TransactionType
+
+  recipientName     String
+  recipientDocument String
+
+  recipientBank    String?
+  recipientAgency  String?
+  recipientAccount String?
+
+  balanceAfterTransaction Decimal @db.Decimal(12, 2)
+  confirm                 Boolean @default(false)
+
+  accountId String
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id     String @id @default(cuid())
+  action String
+
+  targetUserId String? @map("target_user_id")
+  TargetUser   User?   @relation("TargetUserActions", fields: [targetUserId], references: [id], onDelete: SetNull)
+
+  actorUserId String? @map("actor_user_id")
+  ActorUser   User?   @relation("ActorUserActions", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  actorName String @map("actor_name")
+  ipAddress String @map("ip_address")
+  userAgent String @map("user_agent")
+
+  details   Json?
+  createdAt DateTime @default(now())
+}
