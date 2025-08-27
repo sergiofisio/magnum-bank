@@ -1,0 +1,7 @@
+{
+    "name": "magnum_bank",
+    "scripts": {
+        "server": "cd server && yarn dev",
+        "client": "cd client && yarn dev"
+    }
+}

@@ -76,8 +76,9 @@ model Account {
   userId  String
   user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  transactions Transaction[]
-  pixKey       PixKey[]
+  OriginTransactions      Transaction[] @relation("OriginTransactions")
+  DestinationTransactions Transaction[] @relation("DestinationTransactions")
+  pixKeys       PixKey[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -147,6 +148,13 @@ model Transaction {
   id    String          @id @default(cuid())
   value Decimal         @db.Decimal(12, 2)
   type  TransactionType
+  date  DateTime        
+
+  originAccountId String
+  originAccount   Account @relation("OriginTransactions", fields: [originAccountId], references: [id], onDelete: Cascade)
+
+  destinationAccountId String?
+  destinationAccount   Account? @relation("DestinationTransactions", fields: [destinationAccountId], references: [id], onDelete: SetNull)
 
   recipientName     String
   recipientDocument String
@@ -157,9 +165,6 @@ model Transaction {
 
   balanceAfterTransaction Decimal @db.Decimal(12, 2)
   confirm                 Boolean @default(false)
-
-  accountId String
-  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
 }

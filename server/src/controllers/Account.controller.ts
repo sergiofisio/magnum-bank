@@ -8,7 +8,6 @@ import { Decimal } from "@prisma/client/runtime/library";
 class AccountController {
   async create(req: Request, res: Response) {
     const { id: userId } = req.user;
-
     const newAccountData = await generateUniqueAccount();
 
     const newAccount = await prisma.account.create({
@@ -29,7 +28,7 @@ class AccountController {
     const accounts = await prisma.account.findMany({
       where: { userId },
       include: {
-        pixKey: {
+        pixKeys: {
           select: { id: true, type: true, value: true },
         },
       },
@@ -44,10 +43,14 @@ class AccountController {
     const account = await prisma.account.findFirstOrThrow({
       where: { id: accountId, userId },
       include: {
-        pixKey: true,
-        transactions: {
-          orderBy: { createdAt: "desc" },
-          take: 10,
+        pixKeys: true,
+        OriginTransactions: {
+          orderBy: { date: "desc" },
+          take: 5,
+        },
+        DestinationTransactions: {
+          orderBy: { date: "desc" },
+          take: 5,
         },
       },
     });
@@ -63,7 +66,7 @@ class AccountController {
       where: { id: accountId, userId },
     });
 
-    if (Number(account.balance) > 0) {
+    if (!new Decimal(account.balance).isZero()) {
       throw new ApiError("error.account.cannotDeleteWithBalance", 400);
     }
 
@@ -89,7 +92,7 @@ class AccountController {
     }
 
     const depositTransaction = await prisma.$transaction(async (tx) => {
-      const account = await tx.account.findFirstOrThrow({
+      await tx.account.findFirstOrThrow({
         where: { id: accountId, userId },
       });
 
@@ -104,10 +107,11 @@ class AccountController {
 
       const transaction = await tx.transaction.create({
         data: {
-          accountId: account.id,
+          originAccountId: accountId,
           type: TransactionType.DEPOSIT,
           value: depositValue,
-          recipientName: "Depósito",
+          date: new Date(),
+          recipientName: req.user.name,
           recipientDocument: req.user.documents[0]?.value || "",
           balanceAfterTransaction: updatedAccount.balance,
         },

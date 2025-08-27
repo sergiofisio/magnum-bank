@@ -35,7 +35,7 @@ class AuthMiddleware {
           addresses: true,
           accounts: {
             include: {
-              pixKey: true,
+              pixKeys: true,
             },
           },
         },

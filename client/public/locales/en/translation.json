@@ -1,0 +1,82 @@
+{
+  "login": {
+    "title": "Magnum Bank",
+    "cpfLabel": "CPF",
+    "passwordLabel": "Password",
+    "submitButton": "Sign In",
+    "loadingButton": "Signing In...",
+    "success": "Login successful!"
+  },
+  "logout": {
+    "success": "You have been successfully logged out."
+  },
+  "header": {
+    "greeting": "Hello",
+    "logoutButton": "Logout",
+    "sessionExpired": "Session Expired",
+    "sessionEnding": "Your session will end soon.",
+    "sessionExpiredMessage": "Your session has expired due to inactivity. Please log in again."
+  },
+  "transaction": {
+    "DEPOSIT": "DEPOSIT",
+    "PIX": "PIX",
+    "TED": "WIRE TRANSFER",
+    "receive": "Received from ",
+    "send": "Sent to ",
+    "title": "Make a Transaction",
+    "success": "Transaction successful!",
+    "sendingFrom": "Sending from account",
+    "currentBalance": "Current balance",
+    "noAccountSelected": "Please select an account in the sidebar to continue.",
+    "form": {
+      "value": "Value to transfer",
+      "pixKey": "PIX Key (CPF, Email, etc.)",
+      "recipientName": "Recipient's name",
+      "recipientDocument": "Recipient's CPF/CNPJ",
+      "recipientBank": "Bank",
+      "recipientAgency": "Agency",
+      "recipientAccount": "Account with digit",
+      "transactionPassword": "Transaction Password",
+      "submit": "Transfer",
+      "sending": "Sending..."
+    }
+  },
+  "sidebar": {
+    "accounts": "My Accounts",
+    "overview": "Recent",
+    "statement": "Statement",
+    "newTransaction": "Make Transaction",
+    "selectAccountPrompt": "Select an account",
+    "accountSelectorPlaceholder": "Select an account"
+  },
+  "home": {
+    "title": "My Accounts",
+    "totalBalance": "Balance",
+    "showAllBalances": "Show Balances",
+    "hideAllBalances": "Hide Balances",
+    "agency": "Agency",
+    "account": "Account"
+  },
+  "history": {
+    "title": "Statement",
+    "loading": "Loading statement...",
+    "previousBalance": "Previous Balance",
+    "dayEndBalance": "End of Day Balance",
+    "filter": {
+      "last7days": "Last 7 days",
+      "last15days": "Last 15 days",
+      "last30days": "Last 30 days",
+      "last90days": "Last 90 days"
+    }
+  },
+  "error": {
+    "auth": {
+      "cpfRequiredFields": "CPF and password are required.",
+      "invalidCredentials": "Invalid CPF or password.",
+      "generic": "An unexpected error occurred."
+    },
+    "account": {
+      "cannotDeleteWithBalance": "Cannot delete accounts with a positive balance."
+    }
+  }
+}

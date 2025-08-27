@@ -4,24 +4,33 @@ import { prisma } from "../lib/prisma";
 import { ApiError } from "../errors/ApiError";
 import bcrypt from "bcryptjs";
 import jwt, { Secret } from "jsonwebtoken";
+import { DocumentType } from "@prisma/client";
 
 class AuthController {
   async login(req: Request, res: Response) {
-    const { email, password } = req.body;
+    const { cpf, password } = req.body;
 
-    if (!email || !password) {
+    if (!cpf || !password) {
       throw new ApiError("error.auth.requiredFields", 400);
     }
 
-    const user = await prisma.user.findUnique({
-      where: { email, isActive: true },
+    const user = await prisma.user.findFirst({
+      where: {
+        isActive: true,
+        documents: {
+          some: {
+            type: DocumentType.CPF,
+            value: cpf,
+          },
+        },
+      },
       include: {
         documents: true,
         phones: true,
         addresses: true,
         accounts: {
           include: {
-            pixKey: true,
+            pixKeys: true,
           },
         },
       },

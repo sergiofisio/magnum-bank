@@ -4,7 +4,7 @@
   "main": "server.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts",
+    "dev": "clear & nodemon --watch src --ext ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "prisma:seed": "tsx prisma/seed.ts"

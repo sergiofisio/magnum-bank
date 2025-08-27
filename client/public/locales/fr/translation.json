@@ -1,0 +1,82 @@
+{
+  "login": {
+    "title": "Magnum Bank",
+    "cpfLabel": "CPF",
+    "passwordLabel": "Mot de passe",
+    "submitButton": "Se connecter",
+    "loadingButton": "Connexion...",
+    "success": "Connexion réussie !"
+  },
+  "logout": {
+    "success": "Vous avez été déconnecté avec succès."
+  },
+  "header": {
+    "greeting": "Bonjour",
+    "logoutButton": "Déconnexion",
+    "sessionExpired": "Session Expirée",
+    "sessionEnding": "Votre session expirera bientôt.",
+    "sessionExpiredMessage": "Votre session a expiré en raison de l'inactivité. Veuillez vous reconnecter."
+  },
+  "transaction": {
+    "DEPOSIT": "DÉPÔT",
+    "PIX": "PIX",
+    "TED": "VIREMENT BANCAIRE",
+    "receive": "Reçu de ",
+    "send": "Envoyé à ",
+    "title": "Effectuer une Transaction",
+    "success": "Transaction réussie !",
+    "sendingFrom": "Envoi depuis le compte",
+    "currentBalance": "Solde actuel",
+    "noAccountSelected": "Veuillez sélectionner un compte dans la barre latérale pour continuer.",
+    "form": {
+      "value": "Montant à transférer",
+      "pixKey": "Clé PIX (CPF, E-mail, etc.)",
+      "recipientName": "Nom du bénéficiaire",
+      "recipientDocument": "CPF/CNPJ du bénéficiaire",
+      "recipientBank": "Banque",
+      "recipientAgency": "Agence",
+      "recipientAccount": "Compte avec chiffre de contrôle",
+      "transactionPassword": "Mot de passe de transaction",
+      "submit": "Transférer",
+      "sending": "Envoi..."
+    }
+  },
+  "sidebar": {
+    "accounts": "Mes Comptes",
+    "overview": "Récents",
+    "statement": "Relevé",
+    "newTransaction": "Effectuer une transaction",
+    "selectAccountPrompt": "Sélectionnez un compte",
+    "accountSelectorPlaceholder": "Sélectionnez un compte"
+  },
+  "home": {
+    "title": "Mes Comptes",
+    "totalBalance": "Solde",
+    "showAllBalances": "Afficher les Soldes",
+    "hideAllBalances": "Masquer les Soldes",
+    "agency": "Agence",
+    "account": "Compte"
+  },
+  "history": {
+    "title": "Relevé de Compte",
+    "loading": "Chargement du relevé...",
+    "previousBalance": "Solde Précédent",
+    "dayEndBalance": "Solde du Jour",
+    "filter": {
+      "last7days": "7 derniers jours",
+      "last15days": "15 derniers jours",
+      "last30days": "30 derniers jours",
+      "last90days": "90 derniers jours"
+    }
+  },
+  "error": {
+    "auth": {
+      "cpfRequiredFields": "CPF et mot de passe sont requis.",
+      "invalidCredentials": "CPF ou mot de passe invalide.",
+      "generic": "Une erreur inattendue est survenue."
+    },
+    "account": {
+      "cannotDeleteWithBalance": "Impossible de supprimer des comptes avec un solde positif."
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "login": {
+    "title": "Magnum Bank",
+    "cpfLabel": "CPF",
+    "passwordLabel": "Senha",
+    "submitButton": "Entrar",
+    "loadingButton": "Entrando...",
+    "success": "Login realizado com sucesso!"
+  },
+  "logout": {
+    "success": "Você foi desconectado com sucesso."
+  },
+  "header": {
+    "greeting": "Olá",
+    "logoutButton": "Sair",
+    "sessionExpired": "Sessão Expirada",
+    "sessionEnding": "Sua sessão terminará em breve.",
+    "sessionExpiredMessage": "Sua sessão expirou por inatividade. Por favor, faça o login novamente."
+  },
+  "transaction": {
+    "DEPOSIT": "DEPÓSITO",
+    "PIX": "PIX",
+    "TED": "TED",
+    "receive":"Recebido de ",
+    "send":"Enviado para ",
+    "title": "Realizar Transação",
+    "success": "Transação realizada com sucesso!",
+    "sendingFrom": "Enviando da conta",
+    "currentBalance": "Saldo atual",
+    "noAccountSelected": "Por favor, selecione uma conta na barra lateral para continuar.",
+    "form": {
+      "value": "Valor a transferir",
+      "pixKey": "Chave PIX (CPF, E-mail, etc.)",
+      "recipientName": "Nome do favorecido",
+      "recipientDocument": "CPF/CNPJ do favorecido",
+      "recipientBank": "Banco",
+      "recipientAgency": "Agência",
+      "recipientAccount": "Conta com dígito",
+      "transactionPassword": "Senha de Transação",
+      "submit": "Transferir",
+      "sending": "Enviando..."
+    }
+  },
+  "sidebar": {
+    "accounts": "Minhas Contas",
+    "overview": "Recentes",
+    "statement": "Extrato",
+    "newTransaction":"Realizar transações",
+    "selectAccountPrompt": "Selecione uma conta",
+    "accountSelectorPlaceholder": "Selecione uma conta"
+  },
+  "home": {
+    "title": "Minhas Contas",
+    "totalBalance": "Saldo",
+    "showAllBalances": "Mostrar Saldos",
+    "hideAllBalances": "Ocultar Saldos",
+    "agency": "Agência",
+    "account": "Conta"
+  },
+  "history": {
+    "title": "Extrato",
+    "loading": "Carregando extrato...",
+    "previousBalance": "Saldo Anterior",
+    "dayEndBalance": "Saldo do Dia",
+    "filter": {
+      "last7days": "Últimos 7 dias",
+      "last15days": "Últimos 15 dias",
+      "last30days": "Últimos 30 dias",
+      "last90days": "Últimos 90 dias"
+    }
+  },
+  "error": {
+    "auth": {
+      "cpfRequiredFields": "CPF e senha são obrigatórios.",
+      "invalidCredentials": "CPF ou senha inválidos.",
+      "generic": "Ocorreu um erro inesperado."
+    },
+    "account": {
+        "cannotDeleteWithBalance": "Não é possível excluir contas com saldo positivo."
+    }
+  }
+}
