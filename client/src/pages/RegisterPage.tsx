@@ -111,7 +111,7 @@ const RegisterPage = () => {
                 name="cpf"
                 value={formData.cpf}
                 onChange={handleInputChange}
-                mask={cpfMask}
+                mask={cpfMask.mask}
                 required
               />
             </>
@@ -154,7 +154,7 @@ const RegisterPage = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                mask={phoneMask}
+                mask={phoneMask.mask}
                 required
               />
               <Input
@@ -162,7 +162,7 @@ const RegisterPage = () => {
                 name="zipcode"
                 value={formData.zipcode}
                 onChange={handleInputChange}
-                mask={zipcodeMask}
+                mask={zipcodeMask.mask}
                 required
               />
               <Input
