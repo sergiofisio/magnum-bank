@@ -18,7 +18,7 @@ const RecentTransactions: React.FC<RecentTransactionsProps> = ({
     <div className="bg-surface p-6 rounded-lg shadow-md flex flex-col h-10/12">
       <div className="flex-grow overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-primary-100 !px-4">
         {isLoading && (
-          <p className="text-text-secondary">{t("home.loadingTransactions")}</p>
+          <p className="text-text-secondary">{t("history.loading")}</p>
         )}
         {!isLoading && transactions.length === 0 && (
           <p className="text-text-secondary">{t("home.noTransactionsFound")}</p>
