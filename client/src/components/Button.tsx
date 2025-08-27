@@ -12,13 +12,15 @@ const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const { resetTimer } = useIdleTimerContext();
+  const idleTimerContext = useIdleTimerContext();
 
   const baseStyles =
     "font-bold py-2 px-4 w-40 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    resetTimer();
+    if (idleTimerContext) {
+      idleTimerContext.resetTimer();
+    }
     onClick?.(event);
   };
 

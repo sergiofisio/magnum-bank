@@ -4,7 +4,13 @@ import { useIdleTimerContext } from "../context/IdleTimerContext";
 const SessionTimer = () => {
   const { t } = useTranslation();
 
-  const { remainingTime } = useIdleTimerContext();
+  const idleTimerContext = useIdleTimerContext();
+
+  if (!idleTimerContext) {
+    return null;
+  }
+
+  const { remainingTime } = idleTimerContext;
 
   const minutes = Math.floor(remainingTime / 60);
   const seconds = remainingTime % 60;

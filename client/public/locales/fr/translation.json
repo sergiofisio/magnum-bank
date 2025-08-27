@@ -1,4 +1,28 @@
 {
+  "register": {
+    "title": "Créez votre Compte",
+    "step": "Étape {{current}} sur {{total}}",
+    "nameLabel": "Nom Complet",
+    "emailLabel": "E-mail",
+    "cpfLabel": "CPF",
+    "passwordLabel": "Créez un mot de passe d'accès",
+    "confirmPasswordLabel": "Confirmez votre mot de passe d'accès",
+    "transactionPasswordLabel": "Créez un mot de passe de transaction (4-6 chiffres)",
+    "phoneLabel": "Mobile avec indicatif régional",
+    "zipcodeLabel": "Code Postal",
+    "streetLabel": "Adresse",
+    "numberLabel": "Numéro",
+    "neighborhoodLabel": "Quartier",
+    "nextButton": "Suivant",
+    "backButton": "Retour",
+    "submitButton": "Finaliser l'Inscription",
+    "loadingButton": "Inscription...",
+    "success": "Inscription réussie ! Veuillez vous connecter pour continuer.",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "loginLink": "Se connecter",
+    "registerLink": "Cliquez ici"
+  },
   "login": {
     "title": "Magnum Bank",
     "cpfLabel": "CPF",
@@ -11,6 +35,7 @@
     "success": "Vous avez été déconnecté avec succès."
   },
   "header": {
+    "language": "Choisir la langue",
     "greeting": "Bonjour",
     "logoutButton": "Déconnexion",
     "sessionExpired": "Session Expirée",
@@ -70,6 +95,9 @@
     }
   },
   "error": {
+    "register": {
+      "passwordMismatch": "Les mots de passe d'accès ne correspondent pas."
+    },
     "auth": {
       "cpfRequiredFields": "CPF et mot de passe sont requis.",
       "invalidCredentials": "CPF ou mot de passe invalide.",

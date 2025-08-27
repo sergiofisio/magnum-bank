@@ -10,6 +10,7 @@ import Input from "../components/inputs/input";
 import Button from "../components/Button";
 import { cpfMask, phoneMask, zipcodeMask } from "../utils/masks";
 import { toast } from "react-toastify";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const RegisterPage = () => {
   const { t } = useTranslation();
@@ -75,6 +76,10 @@ const RegisterPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="absolute top-10 right-5 flex flex-col items-center-safe justify-center gap-2">
+        {t("header.language")}
+        <LanguageSwitcher />
+      </div>
       <div className="p-8 bg-white rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           {t("register.title")}

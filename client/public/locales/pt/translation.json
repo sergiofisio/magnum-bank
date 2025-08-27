@@ -18,8 +18,10 @@
     "submitButton": "Finalizar Cadastro",
     "loadingButton": "Cadastrando...",
     "success": "Cadastro realizado com sucesso! Faça o login para continuar.",
+    "dontHaveAccount": "Não uma conta?",
     "alreadyHaveAccount": "Já tem uma conta?",
-    "loginLink": "Faça o login"
+    "loginLink": "Faça o login",
+    "registerLink":"Clique aqui"
   },
   "login": {
     "title": "Magnum Bank",
@@ -33,6 +35,7 @@
     "success": "Você foi desconectado com sucesso."
   },
   "header": {
+    "language":"Escolha o idioma",
     "greeting": "Olá",
     "logoutButton": "Sair",
     "sessionExpired": "Sessão Expirada",

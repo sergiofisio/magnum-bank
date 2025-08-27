@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import type { AppDispatch, RootState } from "../store";
 import Input from "../components/inputs/input";
 import { cpfMask } from "../utils/masks";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const LoginPage = () => {
   const { t } = useTranslation();
@@ -32,6 +33,10 @@ const LoginPage = () => {
 
   return (
     <div className="flex items-center justify-center h-full bg-gray-100">
+      <div className="absolute top-10 right-5 flex flex-col items-center-safe justify-center gap-2">
+        {t("header.language")}
+        <LanguageSwitcher />
+      </div>
       <div className="p-8 bg-white rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           {t("login.title")}
@@ -71,7 +76,7 @@ const LoginPage = () => {
           </div>
         </form>
         <p className="text-center text-sm text-text-secondary mt-4">
-          {t("register.alreadyHaveAccount")}{" "}
+          {t("register.dontHaveAccount")}{" "}
           <Link
             to="/register"
             className="font-bold text-primary-500 hover:underline"
