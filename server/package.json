@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "clear & nodemon --watch src --ext ts",
-    "build": "yarn && tsc",
+    "build": "yarn & yarn prisma generate & tsc",
     "start": "node dist/server.js",
     "prisma:seed": "tsx prisma/seed.ts"
   },
