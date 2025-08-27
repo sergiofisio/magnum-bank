@@ -56,6 +56,22 @@ const initialState: AuthState = {
   error: null,
 };
 
+export const registerUser = createAsyncThunk(
+  "auth/register",
+  async (formData: any, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/user/register", formData);
+      toast.success(i18n.t("register.success"));
+      return response.data;
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || "error.auth.generic";
+      toast.error(i18n.t(errorMessage));
+      return rejectWithValue(errorMessage);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,

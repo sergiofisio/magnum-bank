@@ -18,3 +18,7 @@ export const accountMask = {
   },
   prepare: (str: string) => str.toUpperCase(),
 };
+
+export const zipcodeMask = {
+  mask: "00000-000",
+};

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/slices/authSlice";
 import { useTranslation } from "react-i18next";
 import type { AppDispatch, RootState } from "../store";
@@ -70,6 +70,15 @@ const LoginPage = () => {
             </button>
           </div>
         </form>
+        <p className="text-center text-sm text-text-secondary mt-4">
+          {t("register.alreadyHaveAccount")}{" "}
+          <Link
+            to="/register"
+            className="font-bold text-primary-500 hover:underline"
+          >
+            {t("register.registerLink")}
+          </Link>
+        </p>
       </div>
     </div>
   );

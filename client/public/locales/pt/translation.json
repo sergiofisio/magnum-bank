@@ -1,4 +1,26 @@
 {
+  "register": {
+    "title": "Crie sua Conta",
+    "step": "Passo {{current}} de {{total}}",
+    "nameLabel": "Nome Completo",
+    "emailLabel": "Email",
+    "cpfLabel": "CPF",
+    "passwordLabel": "Crie uma senha de acesso",
+    "confirmPasswordLabel": "Confirme sua senha de acesso",
+    "transactionPasswordLabel": "Crie uma senha de transação (4-6 dígitos)",
+    "phoneLabel": "Celular com DDD",
+    "zipcodeLabel": "CEP",
+    "streetLabel": "Endereço",
+    "numberLabel": "Número",
+    "neighborhoodLabel": "Bairro",
+    "nextButton": "Próximo",
+    "backButton": "Voltar",
+    "submitButton": "Finalizar Cadastro",
+    "loadingButton": "Cadastrando...",
+    "success": "Cadastro realizado com sucesso! Faça o login para continuar.",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "loginLink": "Faça o login"
+  },
   "login": {
     "title": "Magnum Bank",
     "cpfLabel": "CPF",
@@ -70,6 +92,9 @@
     }
   },
   "error": {
+    "register": {
+        "passwordMismatch": "As senhas de acesso não coincidem."
+    },
     "auth": {
       "cpfRequiredFields": "CPF e senha são obrigatórios.",
       "invalidCredentials": "CPF ou senha inválidos.",

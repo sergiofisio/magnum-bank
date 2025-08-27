@@ -11,6 +11,7 @@ import type { RootState } from "../store";
 import AuthLayout from "./AuthLayout";
 import { IdleTimerProvider } from "../context/IdleTimerContext";
 import MainLayout from "../layout/MainLayout";
+import RegisterPage from "../pages/RegisterPage";
 
 const ProtectedRoutes = () => {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
           {
             path: "/login",
             element: <LoginPage />,
+          },
+          {
+            path: "/register",
+            element: <RegisterPage />,
           },
           {
             path: "/",
