@@ -93,6 +93,7 @@ const RegisterPage = () => {
             <>
               <Input
                 label={t("register.nameLabel")}
+                name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 required
@@ -100,12 +101,14 @@ const RegisterPage = () => {
               <Input
                 label={t("register.emailLabel")}
                 type="email"
+                name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 required
               />
               <Input
                 label={t("register.cpfLabel")}
+                name="cpf"
                 value={formData.cpf}
                 onChange={handleInputChange}
                 mask={cpfMask}
@@ -119,6 +122,7 @@ const RegisterPage = () => {
               <Input
                 label={t("register.passwordLabel")}
                 type="password"
+                name="password"
                 value={formData.password}
                 onChange={handleInputChange}
                 required
@@ -126,6 +130,7 @@ const RegisterPage = () => {
               <Input
                 label={t("register.confirmPasswordLabel")}
                 type="password"
+                name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
                 required
@@ -133,6 +138,7 @@ const RegisterPage = () => {
               <Input
                 label={t("register.transactionPasswordLabel")}
                 type="password"
+                name="transactionPassword"
                 value={formData.transactionPassword}
                 onChange={handleInputChange}
                 required
@@ -145,6 +151,7 @@ const RegisterPage = () => {
               <Input
                 label={t("register.phoneLabel")}
                 type="tel"
+                name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
                 mask={phoneMask}
@@ -152,6 +159,7 @@ const RegisterPage = () => {
               />
               <Input
                 label={t("register.zipcodeLabel")}
+                name="zipcode"
                 value={formData.zipcode}
                 onChange={handleInputChange}
                 mask={zipcodeMask}
@@ -159,18 +167,21 @@ const RegisterPage = () => {
               />
               <Input
                 label={t("register.streetLabel")}
+                name="street"
                 value={formData.street}
                 onChange={handleInputChange}
                 required
               />
               <Input
                 label={t("register.numberLabel")}
+                name="number"
                 value={formData.number}
                 onChange={handleInputChange}
                 required
               />
               <Input
                 label={t("register.neighborhoodLabel")}
+                name="neighborhood"
                 value={formData.neighborhood}
                 onChange={handleInputChange}
                 required
