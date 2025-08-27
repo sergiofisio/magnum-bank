@@ -76,6 +76,7 @@
   },
   "home": {
     "title": "Minhas Contas",
+    "noTransactionsFound":"Sem Movimentação Bancária",
     "totalBalance": "Saldo",
     "showAllBalances": "Mostrar Saldos",
     "hideAllBalances": "Ocultar Saldos",

@@ -76,6 +76,7 @@
   },
   "home": {
     "title": "My Accounts",
+    "noTransactionsFound": "No Bank Movement",
     "totalBalance": "Balance",
     "showAllBalances": "Show Balances",
     "hideAllBalances": "Hide Balances",

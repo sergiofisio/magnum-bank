@@ -76,6 +76,7 @@
   },
   "home": {
     "title": "Mes Comptes",
+    "noTransactionsFound": "Aucun Mouvement Bancaire",
     "totalBalance": "Solde",
     "showAllBalances": "Afficher les Soldes",
     "hideAllBalances": "Masquer les Soldes",
